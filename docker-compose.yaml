@@ -15,7 +15,7 @@ services:
       - 'certs:/etc/nginx/certs:ro'
       - 'vhostd:/etc/nginx/vhost.d'
       - 'html:/usr/share/nginx/html'
-      - ./conf.d:/etc/nginx/conf.d
+      - './other/proxy.conf:/etc/nginx/proxy.conf'
     networks:
       - nginx-php-mysql-node
     labels:
@@ -25,7 +25,7 @@ services:
     image: jrcs/letsencrypt-nginx-proxy-companion
     environment:
       - NGINX_PROXY_CONTAINER=nginx-proxy
-      - ACME_CA_URI=https://acme-staging-v02.api.letsencrypt.org/directory
+        #- ACME_CA_URI=https://acme-staging-v02.api.letsencrypt.org/directory
     volumes:
       - 'certs:/etc/nginx/certs:rw'
       - 'vhostd:/etc/nginx/vhost.d'
@@ -41,9 +41,9 @@ services:
       - './www:/var/www/project'
       - './nginx/default.conf:/etc/nginx/conf.d/default.conf'
     environment:
-      - 'VIRTUAL_HOST=localhost' #your domain
-      - 'LETSENCRYPT_HOST=localhost' #your domain
-      - 'LETSENCRYPT_EMAIL=your@email.com'
+      - 'VIRTUAL_HOST=rest.jesusyaro.com' #your domain
+      - 'LETSENCRYPT_HOST=rest.jesusyaro.com' #your domain
+      - 'LETSENCRYPT_EMAIL=jesus@jesusyaro.com'
     depends_on:
       - nginx-proxy
       - letsencrypt
@@ -77,9 +77,9 @@ services:
     networks:
       - nginx-php-mysql-node
     environment:
-    - 'VIRTUAL_HOST=ws.localhost' #your domain
-    - 'LETSENCRYPT_HOST=ws.localhost' #your domain
-    - 'LETSENCRYPT_EMAIL=your@email.com'
+    - 'VIRTUAL_HOST=ws.jesusyaro.com' #your domain
+    - 'LETSENCRYPT_HOST=ws.jesusyaro.com' #your domain
+    - 'LETSENCRYPT_EMAIL=jesus@jesusyaro.com'
 
   mysql-service:
     image: mysql:8

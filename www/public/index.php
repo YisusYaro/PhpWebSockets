@@ -2,7 +2,7 @@
 echo '<body>';
 echo '<h1>Hello</h1>';
 echo '<script>';
-echo "const conn = new WebSocket('ws://ws.localhost');";
+echo "const conn = new WebSocket('wss://ws.jesusyaro.com/');";
 echo 'conn.onopen = function (e) {';
 echo 'console.log("Connection established!");';
 echo '};';
