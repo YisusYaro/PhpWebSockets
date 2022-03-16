@@ -15,6 +15,7 @@ services:
       - 'certs:/etc/nginx/certs:ro'
       - 'vhostd:/etc/nginx/vhost.d'
       - 'html:/usr/share/nginx/html'
+      - ./conf.d:/etc/nginx/conf.d
     networks:
       - nginx-php-mysql-node
     labels:
