@@ -1,6 +1,6 @@
-# nginx_proxy-letsencrypt-nginx-php8.0-mysql8-node-docker-network
+# PhpWebSockets Example
 
-Template for developing apps using nginx proxy, letsencrypt, nginx, php8.0, mysql8 node with docker-compose
+Implementation example web sockets application using php, ready to deploy using wss protocol.
 
 ## Deploy 📦
 
@@ -15,4 +15,4 @@ USER_ID=$(id -u):$(id -g) docker-compose up -d
 ## See result in your domain 🚀
 
 [https://yourdomain.com](https://yourdomain.com)
-# PhpWebSockets
+
