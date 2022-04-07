@@ -1,6 +1,6 @@
 # PhpWebSockets Example
 
-Implementation example web sockets application using php, ready to deploy using wss protocol.
+Implementation example web sockets application using php and ratched, ready to deploy using wss protocol.
 
 ## Deploy 📦
 
